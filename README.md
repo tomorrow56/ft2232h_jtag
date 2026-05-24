@@ -13,16 +13,19 @@ Type-C(tested later so not shown on pic) connection.
 Made with Kicad 10.0.
 
 ---
+以下の手順に従い、EEPROMにデータを書き込むことで、Xilinx JTAG ダウンローダーと USB-UART ブリッジとして同時に使用できます。
 
-[こちら](https://gist.github.com/rikka0w0/24b58b54473227502fa0334bbe75c3c1)の手順に従い、Xilinx JTAG ダウンローダーと USB-UART ブリッジとして同時に使用できます。
+```PowerShell
+cd <Vivado install dir>\bin\
+.\program_ftdi.bat -write -ftdi FT2232H -serial FT000001 -vendor "Your Name" -board "FT2232H-JTAG" -desc "FT2232H JTAG Adapter"
+```
 
-CJMCU FT232HL（紫色の PCB）とほぼピン互換で、標準的な 2x7 JTAG コネクタを搭載しています。
+* 標準的な2.54mmピッチの 2x7 JTAGコネクタと 1x4 UARTコネクタを搭載しています
+* 主要チップ: FT2232HL(QFP64)、ASM1117(3.3V, SOT89)、93LC56(SOP8)
+* Type-C コネクタ搭載
 
-主要チップ: FT2232HL(QFP64)、ASM1117(3.3V, SOT89)、93LC56(SOP8)。
-
-Type-C 接続対応（後で検証済み、写真には未反映）。
-
-KiCad 10.0 で設計。
+#### 設計環境
+KiCad 10.0 で設計
 
 #### Gallery
 
